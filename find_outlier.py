@@ -11,7 +11,6 @@ Examples:
 """
 
 def find_outlier(integers):
-	length = len(integers)
 	checker = []
 	even = 0
 	odd = 0
