@@ -19,20 +19,24 @@ Do not treat other forms of brackets as parentheses (e.g. [], {}, <>).
 
 def valid_parentheses(string):
 	checker = 0
+	checkList = []
+	checkBool = False
 	for char in string:
 		if(char == '('):
-			checker = checker + 1
+			checkList.append('(')
 		elif(char == ')'):
-			checker = checker - 1
+			if(len(checkList) == 0):
+				return False
+			elif(len(checkList) != 0):
+				checkList.pop()
+				checkBool = True
 		else:
 			continue
-	if(checker == 0):
-		return True 
-	else:
-		return False
+	return checkBool
 
 
 print(valid_parentheses("     ("))
 print(valid_parentheses(")test"))
 print(valid_parentheses(""))
 print(valid_parentheses("hi())("))
+print(valid_parentheses("hi(hi)()"))
