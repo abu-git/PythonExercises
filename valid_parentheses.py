@@ -21,6 +21,8 @@ def valid_parentheses(string):
 	checker = 0
 	checkList = []
 	checkBool = False
+	if(len(string) == 0):
+		return True
 	for char in string:
 		if(char == '('):
 			checkList.append('(')
@@ -32,6 +34,8 @@ def valid_parentheses(string):
 				checkBool = True
 		else:
 			continue
+	if(len(checkList) > 0):
+		checkBool = False
 	return checkBool
 
 
