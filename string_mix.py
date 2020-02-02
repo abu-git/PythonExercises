@@ -91,6 +91,9 @@ def mix(s1, s2):
 			if(len(s2result) > 1):
 				resultList.append("2:" + s2result + "/")
 		z = z + 1
+	
+	resultList.sort(key=len)
+	resultList.sort()
 	resultList.sort(key=len, reverse=True)
 	resultString = ""
 	for x in resultList:
