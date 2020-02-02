@@ -53,39 +53,61 @@ def mix(s1, s2):
 		i = i + 1
 	alphabets = 'abcdefghijklmnopqrstuvwxyz'
 	for char in s1:
-		print("char: " + char)
+		#print("char: " + char)
 		for ch in alphabets:
 			if char == ch:
-				print("char == ch for :" + ch)
+				#print("char == ch for :" + ch)
 				index = alphabets.find(ch)
 				if(string1[index] == 0):
 					string1[index] = ch
 				else:
 					string1[index] = string1[index] + ch
 	for char in s2:
-		print("s2 char:" + char)
+		#print("s2 char:" + char)
 		for ch in alphabets:
 			if(char == ch):
-				print("char == ch for :" + ch)
+				#print("char == ch for :" + ch)
 				index = alphabets.find(ch)
 				if(string2[index] == 0):
 					string2[index] = ch
 				else:
 					string2[index] = string2[index] + ch
 	z = 0
+	resultList = []
 	while(z < 26):
 		s1result = string1[z]
 		s2result = string2[z]
 		if((type(string1[z]) == str) and (type(string2[z]) == int)):
 			if(len(s1result) > 1):
-				pass
-		z = z + 1	
-	return string2
+				#print("s1result > : " + s1result)
+				resultList.append("1:" + s1result + "/")
+		elif((type(string1[z]) == str) and (type(string2[z]) == str)):
+			if(len(s1result) > len(s2result)):
+				#print("s1result > : " + s1result)
+				resultList.append("1:" + s1result + "/")
+			elif(len(s2result) > len(s1result)):
+				#print("s2result > :" + s2result)
+				resultList.append("2:" + s2result + "/")
+			elif(len(s1result) == len(s2result)):
+				if(len(s1result) > 1):
+					resultList.append("=:" + s1result + "/")
+		elif((type(string1[z]) == int) and (type(string2[z]) == str)):
+			if(len(s2result) > 1):
+				resultList.append("2:" + s2result + "/")
+		z = z + 1
+		resultList.sort()
+		resultString = ""
+		for x in resultList:
+			resultString = resultString + x
+
+	return resultString[:-1]
 
 
 
 		
 
-print(mix('boo', 'moses'))
+print(mix('Are they here', 'yes, they are here'))
+print(mix("looping is fun but dangerous", "less dangerous than coding"))
+print(mix(" In many languages", " there's a pair of functions"))
 
 
