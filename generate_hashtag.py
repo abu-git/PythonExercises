@@ -17,4 +17,28 @@ Examples:
 """
 
 def generate_hashtag(s):
-	pass
+	striped = s.strip()
+	stripedList = striped.split(" ")
+	result = "#"
+	if(len(s) >= 139):
+		return False
+	if(s == ""):
+		return False
+	for word in stripedList:
+		if(word != ""):
+			result = result + word[0].upper()
+			result = result + word[1:].lower()
+	return result
+
+print(generate_hashtag("    banana    "))
+print(generate_hashtag("    banana is nice    "))
+print(generate_hashtag(" Hello there thanks for trying my Kata"))
+print(generate_hashtag("    Hello     World   "))
+print(generate_hashtag(""))
+print(generate_hashtag('Codewars'))
+print(generate_hashtag('Codewars      '))
+print(generate_hashtag('Codewars Is Nice'))
+print(generate_hashtag('codewars is nice'))
+print(generate_hashtag('CodeWars is nice'))
+print(generate_hashtag('c i n'))
+print(generate_hashtag('codewars  is  nice''Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong Cat'))
