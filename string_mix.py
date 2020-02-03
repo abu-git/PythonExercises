@@ -43,8 +43,6 @@ Hopefully other examples can make this clearer.
 	mix(s1, s2) --> "=:aaaaaa/2:eeeee/=:fffff/1:tt/2:rr/=:hh"
 """
 
-def myFunc(e):
-	return len(e)
 
 def mix(s1, s2):
 	string1 = []
@@ -95,6 +93,7 @@ def mix(s1, s2):
 	resultList.sort(key=len)
 	resultList.sort()
 	resultList.sort(key=len, reverse=True)
+	
 	resultString = ""
 	for x in resultList:
 		resultString = resultString + x
