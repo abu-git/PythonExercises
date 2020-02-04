@@ -36,8 +36,8 @@ def next_bigger(n):
 				break					
 	if(result > n):
 		return result
-	else:
-		return -1
+	
+
 	
 
 
@@ -45,4 +45,4 @@ print(next_bigger(12))
 print(next_bigger(513))
 print(next_bigger(2017))
 print(next_bigger(414))
-print(next_bigger(144))
+#print(next_bigger(144))
