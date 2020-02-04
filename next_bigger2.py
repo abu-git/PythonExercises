@@ -26,6 +26,7 @@ def next_bigger(n):
 		for num in stringify:
 			str_result = str_result + str(num)
 		result = int(str_result)
+		print(stringify)
 		if(result > n):
 			break
 		else:
@@ -40,7 +41,8 @@ def next_bigger(n):
 
 
 print(next_bigger(12))
-print(next_bigger(513))
-print(next_bigger(2017))
-print(next_bigger(414))
-print(next_bigger(144))
+#print(next_bigger(513))
+#print(next_bigger(2017))
+#print(next_bigger(414))
+#print(next_bigger(144))
+print(next_bigger(9123456780))
