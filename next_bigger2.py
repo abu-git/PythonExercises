@@ -13,34 +13,28 @@ If no bigger number can be composed using those digits, return -1:
 	531 ==> -1
 """
 
+from itertools import permutations as permute
+
 def next_bigger(n):
-	stringify = [int(i) for i in str(n)]
-	i = len(stringify) - 1
-	str_result = ""
-	result = 0
-	while(i != -1):
-		last = stringify[i]
-		before = stringify[i - 1]
-		stringify[i] = before
-		stringify[i - 1] = last
-		for num in stringify:
-			str_result = str_result + str(num)
-		result = int(str_result)
-		print(stringify)
-		if(result > n):
+	string_n = str(n)
+	result = list(map(''.join, permute(string_n)))
+	result = list(dict.fromkeys(result))
+	result.sort()
+	#print(result)
+	output = 0
+	for i in result:
+		if(int(i) > n):
+			output = int(i)
 			break
-		else:
-			str_result = ""
-		i-=1
-	if(result <= n):
+	if(output < n):
 		return -1
-	return result
+	return output
 	
 
 	
 
 
-print(next_bigger(12))
+#print(next_bigger(12))
 #print(next_bigger(513))
 #print(next_bigger(2017))
 #print(next_bigger(414))
