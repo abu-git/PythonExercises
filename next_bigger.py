@@ -30,6 +30,7 @@ def next_bigger(n):
 			break
 		else:
 			str_result = ""
+			stringify = [int(i) for i in str(n)]
 		i-=1
 	if(result <= n):
 		return -1
@@ -44,3 +45,4 @@ print(next_bigger(513))
 print(next_bigger(2017))
 print(next_bigger(414))
 print(next_bigger(144))
+print(next_bigger(1234567890))
